@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fixbet Marketing – Paketler</title>
+  <meta name="description" content="Fixbet: Logo, GIF ve Bonus görsellerini tek tıkla indirin."/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand:#b4ff00;
+      --dark:#0f131a;
+      --dark-2:#1a1f27;
+      --text:#f6fbff;
+      --muted:#aeb7c2;
+      --shadow:0 0 30px rgba(180,255,0,.35);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background: var(--dark);
+      color:var(--text);
+    }
+    .container{max-width:900px;margin:0 auto;padding:28px 20px 72px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .brand img{height:42px}
+    .brand-badge{font-weight:800;font-size:18px;color:#fff}
+    .pill{padding:6px 12px;border-radius:999px;background:var(--dark-2);color:var(--muted);font-size:13px}
+    .hero{margin-top:28px}
+    h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--brand);text-shadow:0 0 15px rgba(180,255,0,.4)}
+    .subtitle{margin:0;color:var(--muted);font-size:18px}
+    .card{margin-top:26px;background:var(--dark-2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+    .packs{display:grid;gap:16px}
+    .pack{padding:18px;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:#141921}
+    .pack h3{margin:0 0 6px 0;font-size:16px;color:var(--brand)}
+    .pack .desc{margin:0 0 12px 0;color:var(--muted);font-size:14px}
+    .download-btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:linear-gradient(180deg, var(--brand), #9fd400);color:#000;font-weight:700;padding:12px 20px;border-radius:14px;box-shadow:0 0 18px rgba(180,255,0,.45);transition:transform .2s}
+    .download-btn:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 0 25px rgba(180,255,0,.7)}
+    footer{margin-top:56px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+    footer a{color:var(--brand);font-weight:600;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <a class="brand" href="#">
+        <img src="Fixbet-Logo-2x.png" alt="Fixbet logo" />
+        <span class="brand-badge">Marketing</span>
+      </a>
+      <div class="pill" id="clock">--:--</div>
+    </header>
+
+    <section class="hero">
+      <h1>Fixbet Marketing dünyasına hoş geldiniz</h1>
+      <p class="subtitle">Tüm görsel ihtiyaçlarınız <strong>tek klasörde</strong>.</p>
+    </section>
+
+    <section class="card" aria-label="Paketler">
+      <div class="packs">
+        <div class="pack">
+          <h3>Fixbet Logo</h3>
+          <p class="desc">PNG, SVG, PDF logo seti.</p>
+          <a class="download-btn" id="btn-logo" href="#" download>İndir</a>
+        </div>
+        <div class="pack">
+          <h3>Fixbet GIF</h3>
+          <p class="desc">Animasyonlu banner/gif paketleri.</p>
+          <a class="download-btn" id="btn-gif" href="#" download>İndir</a>
+        </div>
+        <div class="pack">
+          <h3>Fixbet Bonus Görseller</h3>
+          <p class="desc">Sosyal medya bonus kampanya görselleri.</p>
+          <a class="download-btn" id="btn-bonus" href="#" download>İndir</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Fixbet Marketing</span>
+      <span>Destek: <a href="mailto:marketing@fixbet.com">marketing@fixbet.com</a></span>
+    </footer>
+  </div>
+
+  <script>
+    function pad(n){return n.toString().padStart(2,'0')}
+    function tick(){const d=new Date();const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];document.getElementById('clock').textContent=`${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`} 
+    setInterval(tick,1000);tick();
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // === İNDİRME LİNKLERİ (Releases) ===
+    document.getElementById('btn-logo').href   = 'https://github.com/fixbetgorsel/fixbet/releases/latest/download/fixbet.logo.zip';
+    document.getElementById('btn-gif').href    = 'https://github.com/fixbetgorsel/fixbet/releases/latest/download/fixbet.gif.zip';
+    document.getElementById('btn-bonus').href  = 'https://github.com/fixbetgorsel/fixbet/releases/latest/download/fixbet.bonuslar.rar';
+  </script>
+</body>
+</html>
